@@ -1,0 +1,31 @@
+{% extends 'fixed.html' %}
+{% load static %}
+{% block content %}
+<form action="#" method="post">
+    {% csrf_token %} 
+    <div class="title">Create Attendance list</div>
+    <div class="formgroup">
+        <label for="">Course unit</label>
+        <select name="course_unit" class="form-control" required>
+            <option value=""></option>
+            <option value="LCS301">Artificial Intelligence</option>
+            <option value="LCS302">Numerical methods</option>
+            <option value="LCS322">Database management System</option>
+            <option value="LCS303">Data mining</option>
+            <option value="LCS392">Enterpreneurship</option>
+        </select>
+    </div>
+   <div class="formgroup">
+       <label for="">Lecture time schedule</label><br>
+       From : <input type="time" name="start" required>
+       To : <input type="time" name="end" required>
+   </div>
+    <div class="formgroup">
+        <label for="">Taught Topic</label>
+        <input type="text" name="topic" class="form-control" placeholder="topic" required>
+    </div>
+    <div class="formgroup mx-auto">
+        <input type="submit" name="submit" class="btn btn-primary" value="start registration" required>
+    </div>
+</form>
+{% endblock %}

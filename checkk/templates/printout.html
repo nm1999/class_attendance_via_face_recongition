@@ -1,0 +1,103 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Print Out</title>
+    <link rel="stylesheet" href="{% static 'assest/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assest/fonts/font-awesome.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assest/w3css.css' %}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine">
+    <script src="{% static 'assest/jquery.min.js' %}"></script>
+    <script src="{% static 'assest/js/bootstrap.min.js' %}"></script>
+</head>
+<style>
+    @media print{
+        body{
+            visibility: hidden;
+        }
+        .w3-card-4{
+            visibility: visible;
+            margin:0px;
+            top:0px;
+            left:0px;
+            position:absolute
+        }
+    }
+</style>
+<script>
+    function area(){
+        window.print();
+
+    }
+</script>
+<body>
+    <button onclick="area()" class="w3-btn">Print</button>
+    <div class="container w3-card-4 w-50" id="print-area">
+        <div class="nav navbar">
+            <div class="logo" style="margin:auto">
+                <img src="{% static 'assest/images/log.png'%}" style="width:100px;height:100px" alt="">
+            </div>
+            <div class="title w3-center">
+                <h1>Lira University Attendance System</h1>
+                <h5 >Class Attendance List</h5>
+            </div>
+            <div class="qrcode">
+                <!-- <p>Qrocode</p> -->
+            </div>
+        </div>
+        <div class="contianer">
+            <div class="nav navbar ">
+                <div class="">
+                    <p><b>Course   </b>   : Computer Science</p>
+                    <p><b>Course unit </b>: Enterprise Management</p>
+                    <p><b>Course unit code</b> : LCS3012</p>
+                </div>
+                <div class="d-block">
+                    <p><b>Faculty </b>    :Management sciences</p>
+                    <p><b>Lecturer</b> : Mr.Ojuka Nelson</p>
+                    <p><b>Contact</b> : 0786121721</p>
+                </div>
+            </div>
+            <div class="container nav navbar">
+                <span><b>Date</b>:31/05/2022</span>
+                <span><b>Start time</b> : 11:20</span>
+                <span><b>End time</b> : 1:00</span>
+            </div>
+        </div>
+        <br>
+        <div class="list">
+            <table class="table table-bordered">
+                <tr>
+                    <th>Student Name</th>
+                    <th>Registration Number</th>
+                    <th>Time registered</th>
+                </tr>
+                <tr>
+                    <td>Nyanzi Matia</td>
+                    <td>19/U/0022/LCS</td>
+                    <td>11:32am</td>
+                </tr>
+                <tr>
+                    <td>Nazziwa Sharon</td>
+                    <td>19/U/0021/LCS</td>
+                    <td>11:34am</td>
+                </tr>
+                <tr>
+                    <td>Naula zianabu Edris</td>
+                    <td>19/U/0086/LCS</td>
+                    <td>11:41am</td>
+                </tr>
+                <tr>
+                    <td>Lukenge Benard</td>
+                    <td>19/U/0024/LCS</td>
+                    <td>11:45am</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+ 
+</body>
+</html>

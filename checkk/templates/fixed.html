@@ -1,0 +1,91 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attendance</title>
+    <link rel="stylesheet" href="{% static 'assest/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assest/fonts/font-awesome.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assest/w3css.css' %}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine">
+    <script src="{% static 'assest/jquery.min.js' %}"></script>
+    <script src="{% static 'assest/js/bootstrap.min.js' %}"></script>
+</head>
+<style>
+    .logo{
+        width:100px;
+        height: 100px;
+        border-radius:100%;
+    }
+    .w3-sidenav{
+        box-shadow:1px 1px 12px 1px;
+        width:240px;
+    }
+    .logo{
+        margin-left:50px;
+    }
+    .topbar{
+        position:fixed;
+        width:70%;
+    }
+    .form{
+        width:400px;
+        box-shadow:1px 1px 12px 1px;
+        border-radius:10px;
+        margin: auto;
+    }
+    .title{
+        font-family: 'Tangerine', serif;
+        font-size: 48px;
+        text-shadow: 4px 4px 4px #aaa;
+        text-align: center;
+    }
+    .formgroup{
+        margin-top:13px;
+        padding:10px;
+    }
+    .links a:hover{
+        background-color:orange;
+        box-shadow:0px 0px 6px 0px;
+        border-radius:10px;
+        color: white;
+    }
+    .btn-primary{
+        margin-left:120px;
+    }
+    .fa-calendar-plus{
+        color: white;
+        font-size:20px;
+    }
+</style>
+<body>
+    <div class="row container-fluid">
+        <div class="col-md-3 col-sm-3">
+            <div class="w3-sidenav">
+                <img src="{% static 'assest/images/im.jpg'%}" class="logo" alt="">
+                <div class="container-fluid mt-5 links">
+                    <a href="/dashboard/"><i class="fa fa-dashboard"></i> Dashboard</a>
+                    <a href="#" class="mt-4"> <i class="fa fa-bullhorn"></i> Progress</a>
+                    <a href="/new/" class="mt-4"> <i class="fa fa-plus"></i> New Student</a>
+                    <a href="#" class="mt-4"> <i class="fa fa-edit"></i> Edit profile</a>
+                    <a href="/" class="mt-4"><i class="fa fa-power-off"></i> logout</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-9 col-sm-9 container-fluid p-0 m-0">
+            <div class="navbar nav w3-blue topbar ">
+                <div class=""><h3> <i class="fa fa-calendar-plus"></i> Generate a class list</h3></div>
+                <div class=""><img src="{% static 'assest/images/im.jpg'%}" style="width:60px;height:60px;border-radius:100%;" alt=""></div>
+            </div><br><br><br><br>
+            <div class="form">
+                {% block content %}
+                    
+                {% endblock %}
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>
